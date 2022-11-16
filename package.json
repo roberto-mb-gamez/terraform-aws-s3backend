@@ -1,0 +1,37 @@
+{
+  "name": "s3backend",
+  "version": "1.0.0",
+  "description": "Terraform module to compose AWS Systems Manager (SSM) configurations.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roberto-mb-gamez/terraform-aws-s3backend.git"
+  },
+  "keywords": [],
+  "author": "Roberto Gamez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/roberto-mb-gamez/terraform-aws-s3backend/issues"
+  },
+  "homepage": "https://github.com/roberto-mb-gamez/terraform-aws-s3backend#readme",
+  "devDependencies": {
+    "commitizen": "^4.2.5",
+    "@semantic-release/github": "^8.0.4",
+    "semantic-release": "^19.0.3"
+  },
+  "config": {
+    "commitizen": {
+      "path": "git-cz"
+    }
+  },
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    "@semantic-release/github",
+    "@semantic-release/npm"
+  ],
+  "release": {
+    "branches": [
+      "main"
+    ]
+  }
+}
