@@ -14,13 +14,14 @@
   },
   "homepage": "https://github.com/roberto-mb-gamez/terraform-aws-s3backend#readme",
   "devDependencies": {
-    "commitizen": "^4.2.5",
     "@semantic-release/github": "^8.0.4",
+    "commitizen": "^4.2.5",
+    "git-cz": "^4.9.0",
     "semantic-release": "^19.0.3"
   },
   "config": {
     "commitizen": {
-      "path": "git-cz"
+      "path": "cz-conventional-changelog"
     }
   },
   "plugins": [
