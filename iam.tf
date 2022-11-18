@@ -9,16 +9,16 @@ resource "aws_iam_role" "iam_role" {
 
   assume_role_policy = <<-EOF
     {
-        "Version": "2012-10-17",
-        "Statement": [
-            {
-                "Action": "sts:AssumeRole",
-                "Principal": {
-                    "AWS: ${jsonencode(local.principal_arns)}
-                },
-                "Effect": "Allow"
-            }
-        ]
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Action": "sts:AssumeRole",
+          "Principal": {
+              "AWS": ${jsonencode(local.principal_arns)}
+          },
+          "Effect": "Allow"
+        }
+      ]
     }
   EOF
 
@@ -30,7 +30,7 @@ resource "aws_iam_role" "iam_role" {
 data "aws_iam_policy_document" "policy_doc" {
   statement {
     actions = [
-      "s3:ListBucket"
+      "s3:ListBucket",
     ]
 
     resources = [
@@ -42,7 +42,7 @@ data "aws_iam_policy_document" "policy_doc" {
     actions = ["s3:GetObject", "s3:PutObject", "s3:DeleteObject"]
 
     resources = [
-      "${aws_s3_bucket.s3_bucket.arn}/*"
+      "${aws_s3_bucket.s3_bucket.arn}/*",
     ]
   }
 
@@ -52,7 +52,6 @@ data "aws_iam_policy_document" "policy_doc" {
       "dynamodb:PutItem",
       "dynamodb:DeleteItem"
     ]
-
     resources = [aws_dynamodb_table.dynamodb_table.arn]
   }
 }
